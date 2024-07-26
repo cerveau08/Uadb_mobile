@@ -32,8 +32,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Icon _icon1 = Icon(Icons.favorite_border, color: Colors.white);
-  Icon _icon2 = Icon(Icons.favorite_border, color: Colors.yellow);
+  Icon _icon1 = const Icon(Icons.favorite_border, color: Colors.white);
+  Icon _icon2 = const Icon(Icons.favorite_border, color: Colors.yellow);
   bool _aimer = false;
 
   @override
@@ -49,11 +49,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: cliquer,
-        child: Icon(Icons.forward),
         backgroundColor: Colors.blue,
         tooltip: 'Next',
         shape: const CircleBorder(),
         elevation: 20.0,
+        child: const Icon(Icons.forward),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       bottomNavigationBar: BottomAppBar(
@@ -80,12 +80,12 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       if (_aimer) {
         _aimer = false;
-        _icon1 = Icon(Icons.favorite, color: Colors.yellow);
-        _icon2 = Icon(Icons.favorite, color: Colors.white);
+        _icon1 = const Icon(Icons.favorite, color: Colors.yellow);
+        _icon2 = const Icon(Icons.favorite, color: Colors.white);
       } else {
         _aimer = true;
-        _icon1 = Icon(Icons.favorite_border, color: Colors.white);
-        _icon2 = Icon(Icons.favorite_border, color: Colors.yellow);
+        _icon1 = const Icon(Icons.favorite_border, color: Colors.white);
+        _icon2 = const Icon(Icons.favorite_border, color: Colors.yellow);
       }
     });
   }
