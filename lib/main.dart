@@ -47,6 +47,15 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(icon: _icon2, onPressed: cliquer)
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: cliquer,
+        child: Icon(Icons.forward),
+        backgroundColor: Colors.blue,
+        tooltip: 'Next',
+        shape: CircleBorder(),
+        elevation: 20.0,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 
