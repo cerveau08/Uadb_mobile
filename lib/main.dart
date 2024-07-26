@@ -52,10 +52,27 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.forward),
         backgroundColor: Colors.blue,
         tooltip: 'Next',
-        shape: CircleBorder(),
+        shape: const CircleBorder(),
         elevation: 20.0,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      bottomNavigationBar: BottomAppBar(
+          color: Colors.blue,
+          child: Container(
+            height: 50,
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Icon(
+                  Icons.home,
+                  semanticLabel: "Home",
+                ),
+                Icon(Icons.search),
+                Icon(Icons.notifications),
+                Icon(Icons.account_circle),
+              ],
+            ),
+          )),
     );
   }
 
