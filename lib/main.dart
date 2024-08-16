@@ -76,6 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: Drawer(
         backgroundColor: Colors.green,
         child: ListView(
+          padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(
@@ -88,16 +89,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             const ListTile(
-              leading: Icon(Icons.alarm),
-              title: Text('Alarm'),
-            ),
+                leading: Icon(Icons.alarm), title: Text('Alarm'), onTap: null),
             const ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Home'),
-            ),
+                leading: Icon(Icons.home), title: Text('Home'), onTap: null),
             const ListTile(
               leading: Icon(Icons.forward),
               title: Text('Fowards'),
+              onTap: null,
               trailing: Icon(Icons.forward),
             ),
           ],
