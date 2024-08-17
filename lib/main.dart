@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_cours/page1.dart';
+import 'package:flutter_cours/page2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _indexSelector = 0;
   String _affichage = '0 Alarm';
-
+  final SnackBar _snack = SnackBar(
+    content: const Text('Un snarck Bar'),
+    duration: const Duration(seconds: 4),
+    backgroundColor: const Color.fromARGB(255, 139, 213, 10),
+    action: SnackBarAction(
+        label: 'Clic', textColor: Colors.white, onPressed: () {}),
+  );
   void changeAffichage(int index) {
     setState(() {
       _indexSelector = index;
@@ -69,6 +76,30 @@ class _MyHomePageState extends State<MyHomePage> {
             Image.asset(
               "images/cachet.png",
               width: 90,
+            ),
+            TextButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(_snack);
+              },
+              child: const Text('Déclence Snackbar'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (BuildContext context) => Page1()),
+                );
+              },
+              child: const Text('Aller à la page 1'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (BuildContext context) => Page2()),
+                );
+              },
+              child: const Text('Aller à la page 2'),
             )
           ],
         ),
